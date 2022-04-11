@@ -1,16 +1,38 @@
+// degradê do retângulo do topo
 $orange1: #FFB354
 $orange2: #EE7A3A
+// formatação do texto do topo da sidebar
 $background-color: #FFFFFF
-$textColor: #FFFFFF
-$fontFamily: 'Roboto'
-$fontStyle: normal
-$fontWeight: 700
-$fontSize: 30px
-$lineHeight: 35px
-@mixin TextStyle($color: $textColor, $family: $fontFamily, $style: $fontStyle, $weight: $fontWeight, $size: $fontSize, $height: $lineHeight)
+$title_text-color: #FFFFFF
+$title_font-family: 'Roboto'
+$title_font-style: normal
+$title_font-weight: 700
+$title_font-size: 30px
+$title_line-height: 35px
+@mixin TextStyle($color: $title_text-color, $family: $title_font-family, $style: $title_font-style, $weight: $title_font-weight, $size: $title_font-size, $height: $title_line-height)
     color: $color
     font-family: $family
     font-style: $style
     font-weight: $weight
     font-size: $size
     line-height: $height
+// formatação para o boxshadow da sidebar e dos itens do menu ou para a borda caso não suporte boxshadow
+$shadow: rgba(0, 0, 0, 0.25)
+$sideBar_box-shadow: 0px 0px 10px $shadow
+@mixin BoxShadow($shadow: $sideBar_box-shadow)
+    webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    box-shadow: $shadow
+$border-color: rgb(0, 0, 0, 0.5)
+//formatação do texto dos itens do menu
+$menu_text-color: #725C5C
+$menu_font-family: 'Quicksand'
+$menu_font-style: normal
+$menu_font-weight: 500
+$menu_font-size: 15px
+$menu_line-height: 19px
+$menu_background-color: #FFFFFF
+$menu_margin: 2px
+$menu_box-shadow: 0px $menu_margin 0.2px $shadow
+
+$menuActive_background-color: #FDF1EB

@@ -1,9 +1,19 @@
 @use "bar"
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
 nav.side_bar
     display: fixed
     height: 100vh
     background-color: bar.$background-color
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+
+    @supports (box-shadow: bar.$sideBar_box-shadow) or (webkit-box-shadow: bar.$sideBar_box-shadow) or (-moz-box-shadow: bar.$sideBar_box-shadow)
+        @include bar.BoxShadow
+    @supports not ((box-shadow: bar.$sideBar_box-shadow) or (webkit-box-shadow: bar.$sideBar_box-shadow) or (-moz-box-shadow: bar.$sideBar_box-shadow))
+        border-style: none groove none none
+        border-color: bar.$border-color
+        border-width: 10px
     .Top
         display: flex
         text-align: center
@@ -12,4 +22,41 @@ nav.side_bar
         background: linear-gradient(180deg, bar.$orange1 0%, bar.$orange2 100%)
         .nome_evento
             @include bar.TextStyle
+    .menu
+        ul
+            position: relative
+            .menu-item
+                display: flex
+                height: 35px
+                list-style: none
+                margin-top: bar.$menu_margin
+                background-color: bar.$menu_background-color
+                @supports (box-shadow: bar.$menu_box-shadow) or (webkit-box-shadow: bar.$menu_box-shadow) or (-moz-box-shadow: bar.$menu_box-shadow)
+                    @include bar.BoxShadow(bar.$menu_box-shadow)
+                @supports not ((box-shadow: bar.$menu_box-shadow) or (webkit-box-shadow: bar.$menu_box-shadow) or (-moz-box-shadow: bar.$menu_box-shadow))
+                    border-style: none none groove none
+                    border-color: bar.$border-color
+                    border-width: 2px
+                    margin-top: 0px
+                cursor: pointer
+                &:hover
+                    background-color: bar.$menuActive_background-color
+                a
+                    margin: 8px 0px 8px 20px
+                    @include bar.TextStyle(bar.$menu_text-color, bar.$menu_font-family, bar.$menu_font-style, bar.$menu_font-weight, bar.$menu_font-size, bar.$menu_line-height)
+            
+            .active
+                position: relative
+                background-color: bar.$menuActive_background-color
+            .active::after
+                content: ''
+                position: absolute
+                top: 0
+                bottom: 0
+                left: 0
+                width: 5px
+                background: linear-gradient(180deg, bar.$orange1 0%, bar.$orange2 100%)
+                
+                  
+
     
