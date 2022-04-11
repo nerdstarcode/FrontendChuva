@@ -1,0 +1,13 @@
+//Estilização do texto
+@mixin TextStyle($color, $family, $style, $weight, $size, $height)
+    color: $color
+    font-family: $family
+    font-style: $style
+    font-weight: $weight
+    font-size: $size
+    line-height: $height
+//Box shadow
+@mixin BoxShadow($shadow)
+    webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    box-shadow: $shadow

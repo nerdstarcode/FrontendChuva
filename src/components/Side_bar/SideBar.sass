@@ -1,4 +1,5 @@
 @use "bar"
+@use "../../DefaultSass/mixin"
 *
     padding: 0
     margin: 0
@@ -9,7 +10,7 @@ nav.side_bar
     background-color: bar.$background-color
 
     @supports (box-shadow: bar.$sideBar_box-shadow) or (webkit-box-shadow: bar.$sideBar_box-shadow) or (-moz-box-shadow: bar.$sideBar_box-shadow)
-        @include bar.BoxShadow
+        @include mixin.BoxShadow(bar.$sideBar_box-shadow)
     @supports not ((box-shadow: bar.$sideBar_box-shadow) or (webkit-box-shadow: bar.$sideBar_box-shadow) or (-moz-box-shadow: bar.$sideBar_box-shadow))
         border-style: none groove none none
         border-color: bar.$border-color
@@ -18,10 +19,10 @@ nav.side_bar
         display: flex
         text-align: center
         align-items: center
-        height: 70px
+        height: bar.$top_heigth
         background: linear-gradient(180deg, bar.$orange1 0%, bar.$orange2 100%)
         .nome_evento
-            @include bar.TextStyle
+            @include mixin.TextStyle(bar.$title_text-color, bar.$title_font-family, bar.$title_font-style, bar.$title_font-weight, bar.$title_font-size, bar.$title_line-height)
     .menu
         ul
             position: relative
@@ -32,7 +33,7 @@ nav.side_bar
                 margin-top: bar.$menu_margin
                 background-color: bar.$menu_background-color
                 @supports (box-shadow: bar.$menu_box-shadow) or (webkit-box-shadow: bar.$menu_box-shadow) or (-moz-box-shadow: bar.$menu_box-shadow)
-                    @include bar.BoxShadow(bar.$menu_box-shadow)
+                    @include mixin.BoxShadow(bar.$menu_box-shadow)
                 @supports not ((box-shadow: bar.$menu_box-shadow) or (webkit-box-shadow: bar.$menu_box-shadow) or (-moz-box-shadow: bar.$menu_box-shadow))
                     border-style: none none groove none
                     border-color: bar.$border-color
@@ -43,7 +44,7 @@ nav.side_bar
                     background-color: bar.$menuActive_background-color
                 a
                     margin: 8px 0px 8px 20px
-                    @include bar.TextStyle(bar.$menu_text-color, bar.$menu_font-family, bar.$menu_font-style, bar.$menu_font-weight, bar.$menu_font-size, bar.$menu_line-height)
+                    @include mixin.TextStyle(bar.$menu_text-color, bar.$menu_font-family, bar.$menu_font-style, bar.$menu_font-weight, bar.$menu_font-size, bar.$menu_line-height)
             
             .active
                 position: relative

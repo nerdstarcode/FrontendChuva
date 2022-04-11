@@ -1,0 +1,20 @@
+@use 'header'
+@use "../../DefaultSass/mixin"
+
+div
+    display: grid
+    header
+        display: flex
+        height: header.$header_heigth
+        background: header.$background
+        div.description
+            .simple_text
+                @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_font-size, header.$description_line-height)
+            .title
+                @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_title_font-size, header.$description_title_line-height)
+        div.lenguage
+            height: header.$header_heigth
+            background-color: red
+        div.user
+            height: header.$header_heigth
+            background-color: blue
