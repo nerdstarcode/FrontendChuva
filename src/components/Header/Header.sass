@@ -1,4 +1,4 @@
-@use 'header'
+@use '_header'
 @use "../../DefaultSass/mixin"
 
 div
@@ -7,14 +7,60 @@ div
         display: flex
         height: header.$header_heigth
         background: header.$background
+        @media screen and (max-width: 780.2px)
+            height: header.$header_heigth-md
         div.description
+            margin-left: 30px
+            @media screen and (max-width: 780.2px)
+                margin-left: 15px
             .simple_text
                 @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_font-size, header.$description_line-height)
+                @media screen and (max-width: 780.2px)
+                    header.$description_font-size: 10px
+                    header.$description_line-height: 10px
+                    @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_font-size, header.$description_line-height)
             .title
                 @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_title_font-size, header.$description_title_line-height)
+                @media screen and (max-width: 780.2px)
+                    header.$description_title_font-size: 13px
+                    header.$description_title_line-height: 13px
+                    @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_title_font-size, header.$description_title_line-height)
+
         div.lenguage
             height: header.$header_heigth
             background-color: red
+            @media screen and (max-width: 780.2px)
+                height: header.$header_heigth-md
         div.user
+            display: flex
+            align-items: center
             height: header.$header_heigth
-            background-color: blue
+            @include mixin.TextStyle(header.$user_text-color, header.$user_font-family, header.$user_font-style, header.$user_font-weight, header.$user_font-size, header.$user_line-height)
+            @media screen and (max-width: 780.2px)
+                height: header.$header_heigth-md
+                header.$user_font-size: 8px
+                header.$user_line-height: 8px
+                @include mixin.TextStyle(header.$user_text-color, header.$user_font-family, header.$user_font-style, header.$user_font-weight, header.$user_font-size, header.$user_line-height)
+
+            .user_text
+                position: relative
+                text-align: right
+                margin-right: 2px
+            .user_photo
+                position: relative
+                img
+                    border-radius: 50%
+                &::before
+                    justify-content: center
+                    content: '2'
+                    position: absolute
+                    top: -3px
+                    right: -3px
+                    width: 50%
+                    height: 50%
+                    border-radius: 50%
+                    background: #F85959
+                    color: #fff
+                    text-align: center
+                    font-size: 100%
+

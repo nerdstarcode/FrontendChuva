@@ -14,7 +14,7 @@ export function SideBar(){
                         SLACA 2019
                     </div>
                 </div>
-                <img className="grid-12" src="small" alt="" srcSet={`${small} 300w, ${medium} 768w, ${large} 1280w`} />
+                <img className="grid-12" src="small" alt="Logo da empresa" srcSet={`${small} 612w, ${medium} 768w, ${large} 1280w`} />
                 <div className="menu grid-12">
                     <ul>
                         <li className="menu-item">          <a> Apresentação    </a>     </li>
