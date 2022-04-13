@@ -1,4 +1,3 @@
-import '../../DefaultSass/grid.sass';
 import './SideBar.sass';
 import medium from './img/menu_logo.png';
 import large from './img/menu_logo.png';

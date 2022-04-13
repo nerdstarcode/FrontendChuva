@@ -1,6 +1,5 @@
 import './Header.sass';
 import user from './img/user.jpg';
-import '../../DefaultSass/grid.sass';
 
 export function Header(){
     return(

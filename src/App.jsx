@@ -17,7 +17,7 @@ function App() {
       <div className="grid-10">
         <Header/>
         <Content>
-  
+
         </Content>
       </div>
         
