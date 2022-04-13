@@ -1,9 +1,10 @@
 import './Header.sass';
 import user from './img/user.jpg';
+import '../../DefaultSass/grid.sass';
 
 export function Header(){
     return(
-        <div className="grid-10">
+        <div className="header grid-12">
             <header className="grid-12">
                 <div className="description grid-7">
                     <p className="simple_text">Anais do Simpósio Latino Americano de Ciências de Alimentos</p>
@@ -12,12 +13,12 @@ export function Header(){
                 </div>
                 <div className="lenguage grid-2"></div>
                 <div className="user grid-3">
-                    <div className="user_text grid-9">
+                    <div className="user_text grid-10">
                         <p className="user_greatings">Bem-vindo!</p>
                         <p className="user_email">sthivendev@galoasience.com</p>
                     </div>
                     <div className="user_photo grid-2">
-                        <img className="grid-12" src="user" alt="foto de usuário" srcSet={`${user} 612w, ${user} 768w, ${user} 1280w`} />
+                        <img className="grid-9" src="user" alt="foto de usuário" srcSet={`${user} 612w, ${user} 768w, ${user} 1280w`} />
                     </div>
                 </div>
 

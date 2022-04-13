@@ -7,7 +7,7 @@ import small from './img/menu_logo.png';
 
 export function SideBar(){
     return(
-        <div className="grid-2">
+        <div className="side_bar grid-12">
             <nav className="side_bar grid-12">
                 <div className="Top grid-12"> 
                     <div className="nome_evento grid-12">
