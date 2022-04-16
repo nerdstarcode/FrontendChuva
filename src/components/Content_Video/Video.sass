@@ -3,7 +3,9 @@ div.video
     position: relative
     iframe 
         height: video.$height
-        @media screen and (max-width: 780.2px)
+        @media screen and (max-width: 780px)
+            height: video.$height-md
+        @media screen and (max-width: 544px)
             height: video.$height-sm
     img
         position: absolute
@@ -12,7 +14,9 @@ div.video
         left: 0
         right: 0
         height: video.$height
-        @media screen and (max-width: 780.2px)
+        @media screen and (max-width: 780px)
+            height: video.$height-md
+        @media screen and (max-width: 544px)
             height: video.$height-sm
     img.active
         display: none

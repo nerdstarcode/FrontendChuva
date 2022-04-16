@@ -1,5 +1,5 @@
 import './Content.sass';
-import { Video } from '../Content_Video/Video'
+import { Video } from '../Content_Video/index'
 
 export function Content(){
     return(
