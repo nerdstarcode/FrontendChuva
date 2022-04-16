@@ -1,5 +1,5 @@
 import './Video.sass';
-import layout from './img/layout.png';
+import layout from '../../assets/img/layout.png';
 
 export function Video(){
     return(

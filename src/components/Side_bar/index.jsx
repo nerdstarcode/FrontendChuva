@@ -1,7 +1,7 @@
 import './SideBar.sass';
-import medium from './img/menu_logo.png';
-import large from './img/menu_logo.png';
-import small from './img/menu_logo.png';
+import medium from '../../assets/img/menu_logo.png';
+import large from '../../assets/img/menu_logo.png';
+import small from '../../assets/img/menu_logo.png';
 
 
 export function SideBar(){
