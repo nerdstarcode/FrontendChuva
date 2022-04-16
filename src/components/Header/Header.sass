@@ -3,38 +3,57 @@
 
 header
     display: flex
+    align-items: center
     height: header.$header_heigth
     background: header.$background
-    @media screen and (max-width: 780.2px)
+    @media screen and (max-width: 780px)
         height: header.$header_heigth-md
+    
     div.description
-        margin-left: 30px
-        @media screen and (max-width: 780.2px)
-            margin-left: 15px
+        p
+            margin-left: 25px
+            @media screen and (max-width: 780px)
+                margin-left: 15px
         .simple_text
             @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_font-size, header.$description_line-height)
-            @media screen and (max-width: 780.2px)
+            @media screen and (max-width: 780px)
                 header.$description_font-size: 10px
                 header.$description_line-height: 10px
                 @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_font-size, header.$description_line-height)
         .title
             @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_title_font-size, header.$description_title_line-height)
-            @media screen and (max-width: 780.2px)
+            @media screen and (max-width: 780px)
                 header.$description_title_font-size: 13px
                 header.$description_title_line-height: 13px
                 @include mixin.TextStyle(header.$description_text-color, header.$description_font-family, header.$description_font-style, header.$description_font-weight, header.$description_title_font-size, header.$description_title_line-height)
+    div.language
+        .border
+            display: flex
+            position: relative
+            align-items: center
+            border-style: solid 
+            border-width:  1px 
+            border-color: #000
+            border-radius: 5px
+            .language_current
+                .language_img
+                    position: relative
+                    z-index: 10
+            .language_select
+                font-size: 10px
+                background: none
+                border: none
+                @media screen and (min-width: 977px)
+                    font-size: 20px
+                    
+            @media screen and (max-width: 780px)
 
-    div.lenguage
-        height: header.$header_heigth
-        background-color: red
-        @media screen and (max-width: 780.2px)
-            height: header.$header_heigth-md
     div.user
         display: flex
         align-items: center
         height: header.$header_heigth
         @include mixin.TextStyle(header.$user_text-color, header.$user_font-family, header.$user_font-style, header.$user_font-weight, header.$user_font-size, header.$user_line-height)
-        @media screen and (max-width: 780.2px)
+        @media screen and (max-width: 780px)
             height: header.$header_heigth-md
             header.$user_font-size: 8px
             header.$user_line-height: 8px
@@ -46,23 +65,27 @@ header
         .user_photo
             display: grid
             position: relative
-            img
+            .img
+                position: relative
                 justify-self: center
+                height: 4vw
+                background-image: url(../../assets/img/user.jpg)
+                background-size: contain
+                @include mixin.Size(4vw,4vw)
                 @include mixin.MaxSize(50px,50px)
                 border-radius: 50%
-            &::before
-                justify-content: center
-                content: '2'
-                position: absolute
-                top: -3px
-                right: 2px
-                height: 50%
-                max-height: 20px
-                width: 30%
-                max-width: 20px
-                border-radius: 50%
-                background: #F85959
-                color: #fff
-                text-align: center
-                font-size: 80%
+                &::before
+                    justify-content: center
+                    content: '2'
+                    position: absolute
+                    top: -10%
+                    right: -10%
+                    @include mixin.Size(50%, 50%)
+                    max-height: 50px
+                    max-width: 50px
+                    border-radius: 50%
+                    background: #F85959
+                    color: #fff
+                    text-align: center
+                    font-size: 100%
 

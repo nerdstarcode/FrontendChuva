@@ -5,6 +5,9 @@
     padding: 0
     margin: 0
     box-sizing: border-box
+div.side_bar
+    @media screen and (max-width: 544px)
+        display: none
 nav.side_bar
     display: fixed
     height: 100vh
@@ -21,18 +24,17 @@ nav.side_bar
         align-items: center
         height: bar.$top_heigth
         background: linear-gradient(180deg, bar.$orange1 0%, bar.$orange2 100%)
-        @media screen and (max-width: 780.2px)
+        @media screen and (max-width: 780px)
             height: bar.$top_height-md
         .nome_evento
             @include mixin.TextStyle(bar.$title_text-color, bar.$title_font-family, bar.$title_font-style, bar.$title_font-weight, bar.$title_font-size, bar.$title_line-height)
-            @media screen and (max-width: 780.2px)
+            @media screen and (max-width: 780px)
                 bar.$title_font-weight: 500
                 bar.$title_font-size: 15px
                 bar.$title_line-height: 15px
                 @include mixin.TextStyle(bar.$title_text-color, bar.$title_font-family, bar.$title_font-style, bar.$title_font-weight, bar.$title_font-size, bar.$title_line-height)
     .menu
         ul
-            position: relative
             .menu-item
                 display: flex
                 height: 35px
@@ -44,18 +46,17 @@ nav.side_bar
                 border-width: 2px
                 margin-top: 0px
                 cursor: pointer
-                @media screen and (max-width: 780.2px)
+                @media screen and (max-width: 780px)
                     height: 25px
                 &:hover
                     background-color: bar.$menuActive_background-color
                 a
                     margin: 8px 0px 8px 20px
                     @include mixin.TextStyle(bar.$menu_text-color, bar.$menu_font-family, bar.$menu_font-style, bar.$menu_font-weight, bar.$menu_font-size, bar.$menu_line-height)
-                    @media screen and (max-width: 780.2px)
+                    @media screen and (max-width: 780px)
                         bar.$menu_font-size: 12px
                         bar.$menu_line-height: 12px
                         margin: 6px 0px 6px 10px
-
                         @include mixin.TextStyle(bar.$menu_text-color, bar.$menu_font-family, bar.$menu_font-style, bar.$menu_font-weight, bar.$menu_font-size, bar.$menu_line-height)
             .active
                 position: relative

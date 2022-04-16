@@ -1,9 +1,41 @@
 @use "sass:math"
-$grid-columns: 12
-$grid-max: 980px
 [class*="grid-"] 
     box-sizing: border-box
     padding: 0
-@for $i from 1 through $grid-columns 
+$grid-columns: 12
+
+@for $i from 0 through $grid-columns 
     .grid-#{$i} 
-        width: math.div(100%,$grid-columns)*$i   
+        width: math.div(100%,$grid-columns)*$i  
+    .miss
+        display: none
+    .see
+        display: grid
+@media screen and (min-width: 977px)
+    @for $i from 0 through $grid-columns
+            .grid-#{$i}-lg
+                width: math.div(100%,$grid-columns)*$i  
+            .miss-lg
+                display: none
+            .see-lg
+                display: grid
+@media screen and (max-width: 780px)
+    @for $i from 0 through $grid-columns 
+        .grid-#{$i}-md
+            width: math.div(100%,$grid-columns)*$i 
+    .miss-md
+        display: none  
+    .see-md
+        display: grid
+        
+@media screen and (max-width: 544px)
+    @for $i from 0 through $grid-columns 
+        .grid-#{$i}-sm
+            width: math.div(100%,$grid-columns)*$i   
+    .miss-sm
+        display: none  
+    .see-sm
+        display: grid
+
+
+

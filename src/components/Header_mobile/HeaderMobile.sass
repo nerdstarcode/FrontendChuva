@@ -1,0 +1,20 @@
+@use '_header'
+@use "../../DefaultSass/mixin"
+
+header
+    display: flex
+    align-items: center
+    background: header.$background
+    @media screen and (max-width: 544px)
+        height: header.$header_heigth-sm
+
+    .event
+        @include mixin.TextStyle(header.$event_text-color, header.$event_font-family, header.$event_font-style, header.$event_font-weight, header.$event_font-size, header.$event_line-height)
+        p
+            margin-left: 2px
+    div.lenguage
+        height: header.$header_heigth
+        background-color: red
+        @media screen and (max-width: 780px)
+            height: header.$header_heigth-md
+
